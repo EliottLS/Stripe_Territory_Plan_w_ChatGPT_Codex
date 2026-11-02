@@ -9,27 +9,173 @@ export const tiers=[
 {title:'T4 · Nurture',color:'orange',effort:10,rule:'Remaining accounts',reason:'Lower or uncertain fit calls for efficient coverage until a meaningful signal emerges.',motion:'Monthly signal monitoring and relevant nurture; revisit after expansion, funding, or architecture changes.'}];
 export function accountTier(a){if(a.score>=90&&a.opportunity>=250000)return 0;if(a.status==='Existing'&&a.score>=80&&a.recommended&&!/validate|unknown/i.test(a.recommended))return 1;if(a.score>=75)return 2;return 3}
 export const phaseContent=[
-{days:'Days 1–30',title:'Learn & prioritise',factor:.4,color:'blue',categories:[
-['Product upskilling','Complete foundational Payments, Billing, Connect, and Radar learning; practise two business-model-led demos with a solutions engineer.'],
-['Internal relationships & collaboration','Meet your manager, SDR partner, solutions engineer, customer success, risk/compliance, and deal desk. Agree a weekly coaching and account-review cadence.'],
-['Admin & AI','Learn the CRM, qualification fields, forecasting definitions, and approved AI tools. Use approved tools for research summaries; verify sources and keep customer data within policy.'],
-['Territory Intelligence & Strategy','Audit account ownership and existing pipeline; validate tier criteria, map product adoption, and build account plans for the first 10 T1 accounts.'],
-['Customer outreach','Shadow three discoveries; run two mock discoveries with feedback. Launch small, personalised outreach cohorts and review objections weekly.'],
-['Pipeline & revenue','Establish a baseline and inspect inherited opportunities. Track weekly calls, meetings held, accepted opportunities, pipeline created, and stage ageing; focus on learning and qualification over early revenue.']]},
-{days:'Days 31–60',title:'Engage & qualify',factor:.7,color:'violet',categories:[
-['Product upskilling','Deepen discovery on Billing and Connect use cases; co-deliver two tailored demos and practise value-based objection handling.'],
-['Internal relationships & collaboration','Run weekly deal reviews with your manager and SDR; bring solutions engineering into qualified discovery. Validate expansion hypotheses with customer success and engage partners where relevant.'],
-['Admin & AI','Maintain next steps and stakeholder maps in CRM. Use approved AI for draft outreach and call preparation, with human review; reconcile pipeline and forecast every week.'],
-['Territory Intelligence & Strategy','Review response and conversion by tier; validate T1 buying groups, run T2 whitespace reviews, and promote T3 accounts with credible triggers.'],
-['Customer outreach','Build toward full activity, lead discovery, and deliver relevant demos. Use economic-buyer conversations and multi-threading to test urgency and business impact.'],
-['Pipeline & revenue','Track qualification conversion, pipeline created, demos held, and mutual next steps weekly. Build quantified business cases; forecast only deals with credible stage evidence.']]},
-{days:'Days 61–90',title:'Advance & expand',factor:1,color:'green',categories:[
-['Product upskilling','Lead business-model-specific demos with technical support as needed; complete an advanced product teach-back and document recurring discovery patterns.'],
-['Internal relationships & collaboration','Coordinate solutions engineering, legal, risk, implementation, and deal desk around qualified evaluations. Align customer success on adoption outcomes and handoff readiness.'],
-['Admin & AI','Maintain forecast discipline and clean CRM hygiene; automate approved repetitive admin. Audit AI-assisted research for accuracy and retain human judgement in customer communications.'],
-['Territory Intelligence & Strategy','Rebalance time against tier yield and buying signals; plan next-quarter coverage, refresh whitespace, and document why each priority account deserves investment.'],
-['Customer outreach','Operate at full planned cadence; run tailored demos, multi-thread stakeholders, and use mutual action plans to progress evaluations.'],
-['Pipeline & revenue','Inspect weekly revenue, win/loss, stage progression, pipeline coverage, and slippage. Close feasible deals, progress longer-cycle opportunities, and build next-quarter coverage.']]}
+  {
+    "days": "Days 1–30",
+    "title": "Learn & prioritise",
+    "factor": 0.4,
+    "color": "blue",
+    "categories": [
+      [
+        "Product upskilling",
+        [
+          "Complete foundational Payments, Billing, Connect, and Radar learning.",
+          "Practise two business-model-led demos with a solutions engineer."
+        ]
+      ],
+      [
+        "Internal relationships & collaboration",
+        [
+          "Meet your manager, SDR partner, solutions engineer, and customer success team.",
+          "Meet risk/compliance and deal desk to understand approval paths.",
+          "Agree weekly coaching and account-review cadences."
+        ]
+      ],
+      [
+        "Admin & AI",
+        [
+          "Learn the CRM, qualification fields, and forecasting definitions.",
+          "Use approved AI tools for research summaries and verify sources.",
+          "Keep customer data within company policy."
+        ]
+      ],
+      [
+        "Territory Intelligence & Strategy",
+        [
+          "Audit account ownership and inherited pipeline.",
+          "Validate tier criteria and map current product adoption.",
+          "Build account plans for the first 10 T1 accounts."
+        ]
+      ],
+      [
+        "Customer outreach",
+        [
+          "Shadow three discoveries and run two mock discoveries with feedback.",
+          "Launch small, personalised outreach cohorts.",
+          "Review objections and messaging every week."
+        ]
+      ],
+      [
+        "Pipeline & revenue",
+        [
+          "Establish a baseline and inspect inherited opportunities.",
+          "Track weekly calls, meetings, accepted opportunities, pipeline created, and stage ageing.",
+          "Prioritise learning and qualification over early revenue."
+        ]
+      ]
+    ]
+  },
+  {
+    "days": "Days 31–60",
+    "title": "Engage & qualify",
+    "factor": 0.7,
+    "color": "violet",
+    "categories": [
+      [
+        "Product upskilling",
+        [
+          "Deepen discovery on Billing and Connect use cases.",
+          "Co-deliver two tailored demos.",
+          "Practise value-based objection handling."
+        ]
+      ],
+      [
+        "Internal relationships & collaboration",
+        [
+          "Run weekly deal reviews with your manager and SDR.",
+          "Bring solutions engineering into qualified discovery.",
+          "Validate expansion with customer success and engage relevant partners."
+        ]
+      ],
+      [
+        "Admin & AI",
+        [
+          "Maintain CRM next steps and stakeholder maps.",
+          "Use approved AI for draft outreach and call preparation, with human review.",
+          "Reconcile pipeline and forecast every week."
+        ]
+      ],
+      [
+        "Territory Intelligence & Strategy",
+        [
+          "Review response and conversion rates by tier.",
+          "Validate T1 buying groups and run T2 whitespace reviews.",
+          "Promote T3 accounts with credible buying triggers."
+        ]
+      ],
+      [
+        "Customer outreach",
+        [
+          "Build toward full activity and lead discovery conversations.",
+          "Deliver demos tailored to validated customer problems.",
+          "Test urgency and impact with economic buyers and multiple stakeholders."
+        ]
+      ],
+      [
+        "Pipeline & revenue",
+        [
+          "Track qualification conversion, pipeline created, demos, and mutual next steps weekly.",
+          "Build quantified business cases.",
+          "Forecast only deals supported by credible stage evidence."
+        ]
+      ]
+    ]
+  },
+  {
+    "days": "Days 61–90",
+    "title": "Advance & expand",
+    "factor": 1,
+    "color": "green",
+    "categories": [
+      [
+        "Product upskilling",
+        [
+          "Lead business-model-specific demos with technical support as needed.",
+          "Complete an advanced product teach-back.",
+          "Document recurring discovery patterns."
+        ]
+      ],
+      [
+        "Internal relationships & collaboration",
+        [
+          "Coordinate solutions engineering, legal, risk, implementation, and deal desk on qualified evaluations.",
+          "Align customer success on adoption outcomes.",
+          "Confirm handoff readiness and ownership."
+        ]
+      ],
+      [
+        "Admin & AI",
+        [
+          "Maintain forecast discipline and clean CRM hygiene.",
+          "Automate approved repetitive admin tasks.",
+          "Audit AI research for accuracy and apply human judgement to communications."
+        ]
+      ],
+      [
+        "Territory Intelligence & Strategy",
+        [
+          "Rebalance selling time against tier yield and buying signals.",
+          "Plan next-quarter coverage and refresh product whitespace.",
+          "Document the investment rationale for each priority account."
+        ]
+      ],
+      [
+        "Customer outreach",
+        [
+          "Operate at the full planned outreach cadence.",
+          "Run tailored demos and engage multiple stakeholders.",
+          "Use mutual action plans to progress evaluations."
+        ]
+      ],
+      [
+        "Pipeline & revenue",
+        [
+          "Inspect weekly revenue, win/loss, stage progression, coverage, and slippage.",
+          "Close feasible deals and progress longer-cycle opportunities.",
+          "Build next-quarter pipeline coverage."
+        ]
+      ]
+    ]
+  }
 ];
 export const productDescriptions={Payments:'Accept and manage online payments.',Billing:'Recurring subscriptions, invoices, and usage-based billing.',Connect:'Payments for platforms and marketplaces.',Radar:'Tools for detecting and managing payment fraud.',Tax:'Tax calculation and related compliance workflows; availability varies.',Terminal:'In-person payments and connected commerce.','Optimized Checkout Suite':'Checkout experiences and payment methods designed to improve conversion.'};
 export function opportunityReason(a){const reasons=a.recommended.split(/,\s*/).map(p=>({product:p,reason:({Payments:'Explore payment acceptance, conversion, and reconciliation needs.',Billing:'Validate recurring-revenue complexity, subscription changes, and manual billing work.',Connect:'Validate multi-party payment flows, seller onboarding, and payout operations.',Radar:'Validate fraud exposure, false declines, and current risk controls.',Tax:'Validate cross-border tax obligations and manual compliance effort.',Terminal:'Validate in-person payment needs and unified online/offline reporting.','Optimized Checkout Suite':'Validate checkout friction, mobile conversion, and payment-method gaps.'})[p]||'Validate the business problem and product suitability in discovery.'}));return {summary:`Signal: ${a.signal}. Current adoption: ${a.products}. ${a.status==='Existing'?'Explore adjacent product whitespace and adoption needs.':'Validate the incumbent architecture before proposing a change.'}`,reasons}}
