@@ -58,3 +58,8 @@ The book strategy defaults to 300 planned customers (50 big bets, 50 quick wins,
 Account Explorer includes keyboard-accessible hover explanations, expandable fit and opportunity rationale, and colour-coded product adoption. Fit component allocations remain illustrative; the app does not independently research scores.
 
 Account briefs let users save verified LinkedIn or Sales Navigator profile URLs and contact names per suggested buying role. The outreach modal drafts InMail or connection notes, supports copying, and opens the verified profile. It does not send messages or connection requests, scrape LinkedIn, or invent people. Users complete actions on LinkedIn using their own account and subscription. Contact information, drafts and quarterly metrics are not synced across browsers.
+
+
+## Resonate call coaching demo
+
+The separate call coaching app lives in `resonate/`. Run `npm run dev:resonate` for development. `npm run build` produces Territory at the original site root and Resonate at `/resonate/`, preserving the existing Territory URL. Run `CHROMIUM_PATH=/usr/bin/chromium npm run test:resonate` for its browser checks. See `resonate/README.md` for demo capabilities and limitations.
